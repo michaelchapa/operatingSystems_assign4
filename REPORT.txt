@@ -1,5 +1,11 @@
+1. Only me
+2. Yes
+3. N/A
+4. Very long assignment. Didn't do Extra Credit.
+5. 
+
 ########################### C ###############################
-// n = 200000
+// n = 200,000
 Sorting is done in 50845.0ms when one thread is used
 Sorting is done in 12683.8ms when two threads are used
 
@@ -7,10 +13,38 @@ Sorting is done in 12683.8ms when two threads are used
 Sorting is done in 0.4ms when one thread is used
 Sorting is done in 0.1ms when two threads are used
 
-// n = 1000
+// n = 1,000
 Sorting is done in 1.5ms when one thread is used
 Sorting is done in 0.4ms when two threads are used
 
-// n = 2000
+// n = 2,000
 Sorting is done in 5.1ms when one thread is used
 Sorting is done in 1.4ms when two threads are used
+
+######################### JAVA ##############################
+// n = 1,000,000
+Sorting is done in 184587ms when 2 thread(s) used.
+Sorting is done in 373934ms when 1 thread(s) used.
+
+// n = 10,000
+Sorting is done in 32ms when 2 thread(s) used.
+Sorting is done in 50ms when 1 thread(s) used.
+
+// n = 50,000
+Sorting is done in 502ms when 2 thread(s) used.
+Sorting is done in 1000ms when 1 thread(s) used.
+
+######################## ANALYSIS ##########################
+In C the dual threading results in a runtime 1/4th of the runtime
+of the single-threading results for all values of n. I attribute
+the calculated execution time to be a 1/4th because the initialization
+of a second thread requires a couple of function calls. 
+
+In Java the dual threading results in a runtime 1/2 of the runtime
+of the single-threading results for all values of n. I attribute
+the calculated execution time to be 1/2 because the initialization
+of a second thread in Java requires a whole Class being called and
+the overhead of the JVM, where as in C there isn't a virtual machine. 
+Pretty much the Virtual Machine adds a lot of overhead to multi-threading
+because the JVM's primary use-case is portability, in this case we're
+measuring speed so portability will only be a disadvantage to runtime.
