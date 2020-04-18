@@ -1,0 +1,16 @@
+########################### C ###############################
+// n = 200000
+Sorting is done in 50845.0ms when one thread is used
+Sorting is done in 12683.8ms when two threads are used
+
+// n = 500
+Sorting is done in 0.4ms when one thread is used
+Sorting is done in 0.1ms when two threads are used
+
+// n = 1000
+Sorting is done in 1.5ms when one thread is used
+Sorting is done in 0.4ms when two threads are used
+
+// n = 2000
+Sorting is done in 5.1ms when one thread is used
+Sorting is done in 1.4ms when two threads are used
