@@ -8,6 +8,12 @@ void selectionSort(int iStart, int iEnd);
 void printList(int iStart, int iEnd); // TODO remove from final
 void printExecTime(clock_t start, clock_t end);
 
+typedef struct param {
+    int iArraySize;
+    int iStart;
+    int iEnd;
+} param_t;
+
 double *pUnsortedM, *pSortedM;
 
 int main(int argc, char* argv[]){
@@ -17,15 +23,23 @@ int main(int argc, char* argv[]){
     }
     
     clock_t startExec, endExec; // stopwatch for execution time
+    pthread_t tid;              // For multi-threading
+    param_t params;             // Param structure for thread
     int iArraySize = atoi(argv[1]);
     pUnsortedM = malloc(sizeof(double) * iArraySize);
     pSortedM = malloc(sizeof(double) * iArraySize);
     
+    // Single thread execution and metrics
     generateRandom(iArraySize);
     startExec = clock();
     selectionSort(0, iArraySize);
     endExec = clock();
     printExecTime(startExec, endExec);
+    
+    // 2 thread execution and metrics
+        // calculate middle of array
+        // thread1 sorts 0 - mid
+        // thread2 sorts mid - iArraySize
 
     free(pUnsortedM);
     free(pSortedM);
